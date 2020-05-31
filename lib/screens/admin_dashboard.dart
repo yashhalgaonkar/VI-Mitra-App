@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vi_mitra/widgets/dashboard_menu_item.dart';
+import 'travel_list.dart';
 import 'package:vi_mitra/widgets/access_label.dart';
 import 'package:vi_mitra/widgets/mark_indicator.dart';
 
@@ -44,13 +45,13 @@ class AdminDashboard extends StatelessWidget {
               flex: 2,
               child: Row(
                 children: [
-                  //guidelines
+                  //*guidelines
                   DashboardMenuItem(
                     icon: 'guideline',
                     label: 'Guidelines',
                     onPress: () {},
                   ),
-                  //communicaiton and awareness
+                  //*communicaiton and awareness
                   DashboardMenuItem(
                     icon: 'communication',
                     label: 'Communication &\n Awareness',
@@ -65,17 +66,23 @@ class AdminDashboard extends StatelessWidget {
               flex: 2,
               child: Row(
                 children: [
-                  //parking
+                  //*parking
                   DashboardMenuItem(
                     icon: 'travel',
                     label: 'Parking',
                     onPress: () {},
                   ),
-                  //travel history
+                  //*travel history
                   DashboardMenuItem(
                     icon: 'travel',
                     label: 'Travel History',
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TravelList(),
+                          ));
+                    },
                   ),
                 ],
               ),
