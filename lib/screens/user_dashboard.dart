@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vi_mitra/screens/travel_list.dart';
 import 'package:vi_mitra/widgets/access_label.dart';
 import 'package:vi_mitra/widgets/dashboard_menu_item.dart';
 import 'package:vi_mitra/widgets/mark_indicator.dart';
@@ -86,7 +87,14 @@ class UserDashboard extends StatelessWidget {
                   DashboardMenuItem(
                     icon: 'travel',
                     label: 'Travel History',
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TravelList(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

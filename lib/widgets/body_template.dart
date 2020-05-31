@@ -25,12 +25,12 @@ class BodyTemplate extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Travel History'),
+        title: Text(title),
       ),
       body: SafeArea(
         child: Container(
           width: double.infinity,
-          margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+          margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -48,7 +48,10 @@ class BodyTemplate extends StatelessWidget {
               ),
 
               Expanded(
-                child: body,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: body,
+                ),
               )
             ],
           ),

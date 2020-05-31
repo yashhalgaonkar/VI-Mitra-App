@@ -78,10 +78,11 @@ class AdminDashboard extends StatelessWidget {
                     label: 'Travel History',
                     onPress: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TravelList(),
-                          ));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TravelList(),
+                        ),
+                      );
                     },
                   ),
                 ],
