@@ -49,7 +49,7 @@ class BodyTemplate extends StatelessWidget {
 
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0),
+                  padding: const EdgeInsets.only(top: 10.0),
                   child: body,
                 ),
               )
