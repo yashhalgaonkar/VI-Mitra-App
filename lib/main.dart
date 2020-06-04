@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'screens/admin_dashboard.dart';
 import 'screens/user_dashboard.dart';
 
 void main() {
@@ -7,7 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final isAdmin = true;
+  final isFaculty = true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
           title: Text('VI - Mitra'),
         ),
         backgroundColor: Colors.white,
-        body: isAdmin ? AdminDashboard() : UserDashboard(),
+        body: UserDashboard(isFaculty: isFaculty),
       ),
     );
   }

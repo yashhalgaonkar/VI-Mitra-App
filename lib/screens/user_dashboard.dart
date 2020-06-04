@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vi_mitra/screens/self_declaration_form.dart';
 import 'package:vi_mitra/screens/travel_list.dart';
 import 'package:vi_mitra/widgets/access_label.dart';
 import 'package:vi_mitra/widgets/dashboard_menu_item.dart';
@@ -15,6 +16,9 @@ class UserDashboard extends StatelessWidget {
   * have authority to invite visitors.
   * 
   */
+
+  bool isFaculty;
+  UserDashboard({this.isFaculty});
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +40,14 @@ class UserDashboard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Hello Dimple!',
+                      'Hello Yash!',
                       style: TextStyle(fontSize: 25.0),
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     AccessLabel(
-                      label: 'Student',
+                      label: isFaculty ? 'Faculty' : 'Student',
                     )
                   ],
                 ),
@@ -79,11 +83,11 @@ class UserDashboard extends StatelessWidget {
                 children: [
                   //parking
                   DashboardMenuItem(
-                    icon: 'travel',
+                    icon: 'parking',
                     label: 'Parking',
                     onPress: () {},
                   ),
-                  //travel history
+                  //*travel history
                   DashboardMenuItem(
                     icon: 'travel',
                     label: 'Travel History',
@@ -106,11 +110,18 @@ class UserDashboard extends StatelessWidget {
               flex: 2,
               child: Row(
                 children: [
-                  //self declaration
+                  //*self declaration
                   DashboardMenuItem(
                       icon: 'selfdec',
                       label: 'Self Declaration',
-                      onPress: () {}),
+                      onPress: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DeclarationForm(),
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),

@@ -14,3 +14,20 @@ const kBlockDecoration = BoxDecoration(
     Radius.circular(8.0),
   ),
 );
+
+const kTextStyle =
+    TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w600);
+
+const kTextFieldDecoration = InputDecoration(
+  hintText: 'Deafult hint text',
+  contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
+  border: InputBorder.none,
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white, width: 1.0),
+    //borderRadius: BorderRadius.all(Radius.circular(5.0)),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.white, width: 2.0),
+    //borderRadius: BorderRadius.all(Radius.circular(5.0)),
+  ),
+);
