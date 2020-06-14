@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vi_mitra/constants.dart';
+/*
+* The label which shows whether the user is Faculty or Student
+*/
 
 class AccessLabel extends StatelessWidget {
   AccessLabel({this.label});

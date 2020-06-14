@@ -12,12 +12,12 @@ class UserDashboard extends StatelessWidget {
   // final name
 
   /*
-  * This dashboard will be for students as well as faculty who dont
-  * have authority to invite visitors.
-  * 
+  * The Dashboard is the main entry point of the app. It has name of the user,
+  * all the men items, and indicators whether you have filled self declaration
+  * and travel history or not 
   */
 
-  bool isFaculty;
+  final bool isFaculty;
   UserDashboard({this.isFaculty});
 
   @override
@@ -26,15 +26,13 @@ class UserDashboard extends StatelessWidget {
 
     return SafeArea(
       child: Container(
-        color: Colors.white,
-        height: size.height * 0.8,
-        margin: const EdgeInsets.symmetric(horizontal: 20.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             //name and user access
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 20.0),
+              margin: const EdgeInsets.only(bottom: 20.0),
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -115,6 +113,9 @@ class UserDashboard extends StatelessWidget {
                       icon: 'selfdec',
                       label: 'Self Declaration',
                       onPress: () {
+                        //check if the user has filled the form
+                        //if the user has filled the form
+                        //take them to the successPage
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -136,3 +137,22 @@ class UserDashboard extends StatelessWidget {
     );
   }
 }
+
+/*
+List of TODOS:
+TODO 1: Make a screen for Self Declaration (Form)
+TODO 2: Make the complete Commnication and Awareness Screen
+
+TODO 2: Downloads Screen 
+TODO 2: The helpline number screen
+TODO 3: Make the success screen with a tick
+
+
+TODO 4: Make the Bottom Modal Sheet appear if Self Declaration/Travel History is not filled 
+TODO 4: as soon as the screen is opened
+
+TODO 6: Each icon on the dashboard will be a HERO icon
+TODO: ================== UI COMPLETE============================
+
+TODO: Integrate with thw backend with VIERP
+*/

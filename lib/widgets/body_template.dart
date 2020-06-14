@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vi_mitra/constants.dart';
 
+/*
+* A template into which every scrren is fitted
+* With a name, icon, body
+*/
+
 class BodyTemplate extends StatelessWidget {
   const BodyTemplate({
     Key key,
@@ -37,13 +42,13 @@ class BodyTemplate extends StatelessWidget {
               //title of the page
               Text(
                 title,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35.0),
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30.0),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SvgPicture.asset(
                   'assets/icons/$icon.svg',
-                  height: size.height * 0.1,
+                  height: 60.0,
                 ),
               ),
 

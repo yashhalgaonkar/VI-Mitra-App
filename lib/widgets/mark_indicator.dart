@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:vi_mitra/constants.dart';
 
+/*
+* This widget shows if the user has filled self declaration and travel history
+*/
+
 class MarkIndicator extends StatelessWidget {
   MarkIndicator({this.isSelfDone, this.isTravelDone});
 

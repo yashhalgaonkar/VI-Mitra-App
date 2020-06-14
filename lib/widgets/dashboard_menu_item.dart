@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:vi_mitra/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+/*
+* Menu items showed at Dashboard
+*/
+
 class DashboardMenuItem extends StatelessWidget {
   DashboardMenuItem({this.icon, this.label, this.onPress});
 
@@ -16,7 +20,7 @@ class DashboardMenuItem extends StatelessWidget {
       child: GestureDetector(
         child: Container(
           decoration: kBlockDecoration,
-          margin: const EdgeInsets.all(8.0),
+          margin: const EdgeInsets.all(6.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

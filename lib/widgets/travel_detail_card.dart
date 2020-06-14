@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:vi_mitra/models/travel.dart';
+
+/*
+* List tile in the travel list that shows the user the details of his recorded travel
+*/
 
 class TravelDetailCard extends StatelessWidget {
-  const TravelDetailCard({
-    Key key,
-  }) : super(key: key);
+  const TravelDetailCard({Key key, this.travel}) : super(key: key);
+
+  final Travel travel;
 
   //data to be taken is input
   //String state
@@ -33,14 +38,14 @@ class TravelDetailCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'State, City',
-                style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.w600),
+                '${travel.city}, ${travel.state}, ${travel.country}',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
               ),
               SizedBox(
                 height: 4.0,
               ),
               Text(
-                'dd/mm/yyyy - dd/mm/yyyyy',
+                '${travel.startDate} - ${travel.endDate}',
                 style: TextStyle(fontSize: 16.0),
               )
             ],

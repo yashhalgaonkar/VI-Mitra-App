@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:vi_mitra/constants.dart';
 import 'package:vi_mitra/widgets/body_template.dart';
 
+/*
+* The declaration form that everyone (Faculty/student) should fill compusoryly
+* It needs to be filled only once
+*/
+
 class DeclarationForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
