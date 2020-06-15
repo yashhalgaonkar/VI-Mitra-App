@@ -29,6 +29,7 @@ class BodyTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      resizeToAvoidBottomPadding: true,
       appBar: AppBar(
         title: Text(title),
       ),

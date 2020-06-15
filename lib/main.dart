@@ -13,15 +13,29 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'VI - Mitra',
-      home: Scaffold(
-        appBar: AppBar(
-          elevation: 4.0,
-          centerTitle: true,
-          title: Text('VI - Mitra'),
-        ),
-        backgroundColor: Colors.white,
-        body: UserDashboard(isFaculty: isFaculty),
+      home: HomePage(isFaculty: isFaculty),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({
+    Key key,
+    @required this.isFaculty,
+  }) : super(key: key);
+
+  final bool isFaculty;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 4.0,
+        centerTitle: true,
+        title: Text('VI - Mitra'),
       ),
+      backgroundColor: Colors.white,
+      body: UserDashboard(isFaculty: isFaculty),
     );
   }
 }

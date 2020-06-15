@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vi_mitra/constants.dart';
+import 'package:vi_mitra/screens/success_screen.dart';
 import 'package:vi_mitra/widgets/body_template.dart';
 import 'package:vi_mitra/widgets/date_picker_widget.dart';
 import 'package:vi_mitra/widgets/form_text_widget.dart';
@@ -29,63 +30,68 @@ class TravelForm extends StatelessWidget {
         onChanged: () {
           Form.of(primaryFocus.context).save();
         },
-        child: Column(
-          //containes two childre
-          //one for the form
-          //another for the button
-          children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                children: [
-                  FormTextWidget(
-                    hintText: 'City',
-                    controller: cityController,
-                  ),
-                  FormTextWidget(
-                    hintText: 'State',
-                    controller: stateController,
-                  ),
-                  FormTextWidget(
-                    hintText: 'Country',
-                    controller: countryController,
-                  ),
-                  DatePickerWidget(
-                    controller: startDateController,
-                    labelText: 'Start',
-                  ),
-                  DatePickerWidget(
-                    controller: endDateController,
-                    labelText: 'End',
-                  ),
-                ],
-              ),
-            ),
-            //the button part
-            SingleChildScrollView(
-              child: Expanded(
-                child: Container(
-                  child: Center(
-                    child: RaisedButton(
-                      child: Text(
-                        'Confirm',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      color: kAccentColor,
-                      onPressed: () {
-                        if (_formKey.currentState.validate()) {
-                          print('Form validated');
-                          print(cityController.text);
-                          print(stateController.text);
-                          print(countryController.text);
-                        }
-                      },
+        child: SingleChildScrollView(
+          child: Column(
+            //containes two childre
+            //one for the form
+            //another for the button
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Column(
+                  children: [
+                    FormTextWidget(
+                      hintText: 'City',
+                      controller: cityController,
                     ),
-                  ),
+                    FormTextWidget(
+                      hintText: 'State',
+                      controller: stateController,
+                    ),
+                    FormTextWidget(
+                      hintText: 'Country',
+                      controller: countryController,
+                    ),
+                    DatePickerWidget(
+                      controller: startDateController,
+                      labelText: 'Start',
+                    ),
+                    DatePickerWidget(
+                      controller: endDateController,
+                      labelText: 'End',
+                    ),
+                  ],
                 ),
               ),
-            )
-          ],
+              //the button part
+              Container(
+                margin: EdgeInsets.symmetric(vertical: size.height * 0.1),
+                child: Center(
+                  child: RaisedButton(
+                    child: Text(
+                      'Confirm',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: kAccentColor,
+                    onPressed: () {
+                      if (_formKey.currentState.validate()) {
+                        print('Form validated');
+                        print(cityController.text);
+                        print(stateController.text);
+                        print(countryController.text);
+                        print(startDateController.text);
+                        print(endDateController.text);
+                      }
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SuccessScreen()));
+                    },
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
